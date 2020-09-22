@@ -1,0 +1,16 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Prueba Técnica equipo Everest",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "nodemon": "nodemon server/server.js"
+  },
+  "author": "Jose Sepulveda",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.10.6"
+  }
+}
