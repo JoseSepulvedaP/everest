@@ -1,0 +1,52 @@
+.center {
+    margin: 15px;
+    border: 0px;
+}
+
+.container {
+    padding-top: 10vh;
+    margin-left: 20px;
+}
+
+.border {
+    border: 1px solid #56585a !important;
+    text-align: center;
+    padding-top: 20px;
+    border-radius: 5px;
+
+}
+
+.fluid {
+    margin-left: 5px;
+    padding: 20px;
+    width: 100px;
+}
+
+.border0 {
+    border: 0px;
+    width: 100px;
+}
+
+h5 {
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.valid {
+    text-align: center;
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+
+.card-deck {
+    position: relative;
+    top: 20%;
+    padding-left: 25px;
+}
+
+.spinner-grow {
+    top: 35%;
+    position: fixed;
+    z-index: 1;
+;
+}

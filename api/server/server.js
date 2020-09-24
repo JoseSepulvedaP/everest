@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json());
 
-// Se aceptan solo peticiones GET y POST desde front desplegado en Firebase.
+// Se aceptan solo peticiones GET y POST desde front http://localhost:4200
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', process.env.APP);
     res.header('Access-Control-Allow-Headers', 'token, Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');

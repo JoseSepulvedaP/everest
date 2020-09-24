@@ -1,0 +1,15 @@
+<div class="container">
+  <div id="desc">
+    <h6>{{ instruction }}</h6>
+  </div>
+</div>
+<div class="container">
+  <div class="card-deck">
+    <div class="card center" *ngFor="let door of doors">
+      <img src="assets/img/door.png" class="card-img-top" (click)="onClick(door.key)">
+      <div id="name">
+      <strong class="card-title">{{ door.name }}</strong>
+      </div>
+    </div>
+  </div>
+</div>

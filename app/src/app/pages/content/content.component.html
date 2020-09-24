@@ -1,0 +1,23 @@
+<div class="card text-center border0">
+  <div class="card-body">
+    <h4>Puerta {{ doorApp }}</h4>
+  </div>
+  <div class="card-body">
+    <h6 class="card-title">Felicidades :D !! Hemos comprobado que eres un ser humano y puedes ver el contenido de esta puerta</h6>
+    <div>
+      <youtube-player
+        [videoId]=" key"
+        suggestedQuality="highres"
+        [height]="350"
+        [width]="720"
+        [startSeconds]="start"
+        [endSeconds]="end">
+      </youtube-player>
+    </div>
+    <div class="btn-group-toggle d-flex justify-content-center" data-toggle="buttons">
+      <label class="btn btn-secondary active">
+          <input type="checkbox" checked (click)="goHome()">Ver contenido de otra puerta
+      </label>
+  </div>
+  </div>
+</div>

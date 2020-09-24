@@ -1,0 +1,30 @@
+.center {
+    margin: 55px;
+    border: 0px;
+}
+
+img {
+    cursor: pointer;
+}
+
+#name {
+    margin-top: 25px;
+    text-align: center;
+}
+
+#desc {
+    margin-top: 50px;
+    text-align: center;
+    position: fixed;
+}
+
+strong {
+    font-size: 10px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15vh;
+}

@@ -1,0 +1,42 @@
+<div class="card-deck" *ngIf="loading || loadingInit">
+    <div class="card border0">
+        <div class="d-flex justify-content-center">
+            <div class="spinner-grow" style="width: 4rem; height: 4rem;" role="status">
+                <span class="sr-only">Cargando...</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row container" *ngIf="!loadingInit">
+    <div class="col-3 col-md-3 col-sm-4 col-xs-12 border">
+        <h6>{{ instructionKey }}</h6>
+        <div class="card-body">
+            <div *ngFor="let rotation of captcha">
+                <img src="assets/img/upload.png" class="card-img-top fluid" [style.transform]="'rotate(' + rotation + 'deg)'">
+            </div>
+        </div>
+    </div>
+    <div class="col-9 col-md-9 col-sm-8 col-xs-12">
+        <div class="card-deck">
+            <div class="card border0">
+                <h5>Descifre los sellos</h5>
+            </div>
+        </div>
+        <div class="card-deck">
+            <div class="card border0" *ngFor="let rotation of captcha; let i = index">
+                <app-captcha-key (position)="checkPosition($event, i)"></app-captcha-key>
+            </div>
+        </div>
+        <div class="card-deck" *ngIf="valid">
+            <div class="card border0">
+                <h6 class="valid">El sello ha sido liberado. Tienes acceso a ver el contenido detrás de la puerta</h6>
+                <div class="btn-group-toggle d-flex justify-content-center" data-toggle="buttons">
+                    <label class="btn btn-secondary active">
+                        <input type="checkbox" checked (click)="openContent()">Ver el contenido 
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

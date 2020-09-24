@@ -10,33 +10,33 @@ const { update, arrayEquals } = require('../utils/utils');
 app.get('/captcha/:door', validateDoor,  (req, res) => {
     const { door } = req.params;
     Captcha.find({ usedByLastDoor: { $not: { $in: door } } })
-            .exec((err, captchaDB) => {
-            if (err) {
-                return res.status(500).json({
-                    ok: false,
-                    err
-                });
-            }
-            if (captchaDB.length === 0) {
-                return res.status(500).json({
-                    ok: false,
-                    err: {
-                        message: 'No fue posible obtener captcha'
-                    }
-                });
-            }
-            const random = Math.floor(Math.random() * (captchaDB.length - 0) + 0);
-            const newCaptcha = captchaDB[random];
-            const { _id: id, captcha } = newCaptcha;
-            update(id, door);
-            res.json({
-                ok: true,
-                captcha: {
-                    id,
-                    captcha
+        .exec((err, captchaDB) => {
+        if (err) {
+            return res.status(500).json({
+                ok: false,
+                err
+            });
+        }
+        if (captchaDB.length === 0) {
+            return res.status(500).json({
+                ok: false,
+                err: {
+                    message: 'No fue posible obtener captcha'
                 }
             });
+        }
+        const random = Math.floor(Math.random() * (captchaDB.length - 0) + 0);
+        const newCaptcha = captchaDB[random];
+        const { _id: id, captcha } = newCaptcha;
+        update(id, door);
+        res.json({
+            ok: true,
+            captcha: {
+                id,
+                captcha
+            }
         });
+    });
 });
 
 // ===========================
